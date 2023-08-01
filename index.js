@@ -3,8 +3,8 @@ const app = express();
 const port = 8000;
 const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
-
 const upload = require('express-fileupload');
+const path = require('path');
 
 
 //parser for form data
@@ -18,7 +18,7 @@ app.use(express.urlencoded(
 app.use(upload());
 
 //Assets
-app.use(express.static('./assets'));
+app.use(express.static(path.join(__dirname, 'assets')));
 
 //Layouts
 app.use(expressLayouts);
@@ -26,7 +26,7 @@ app.use(expressLayouts);
 
 //View Engine
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 
 
 //routes
