@@ -1,0 +1,31 @@
+
+<div id="home">
+
+        <div id="upload-form">
+            <header>
+                <h1>CSV Reader</h1>
+                <p>Upload csv file and view it in Tabular form</p>
+            </header>
+            <form action="/add" method="POST" enctype="multipart/form-data">
+                <input type="file" name="csvfile"  accept=".csv" required>
+                <input type="submit">
+            </form>
+        </div>
+        
+        <div id="files">
+            <h1>Uploaded files</h1>
+            <% files.forEach(file => { %>
+                <div class="file">
+                    <p class="file-name"><%= file.filename %><p>
+        
+                    <a href="/display/<%= file.id %>?page=1">
+                        <p><i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                    </a>
+                    <a href="/delete/<%= file.id %>">
+                        <p class="delete"><i class="fa-solid fa-trash"></i><p>
+                    </a>
+                </div>
+            <% }) %>
+        </div>
+
+</div>    

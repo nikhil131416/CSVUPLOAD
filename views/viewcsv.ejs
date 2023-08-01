@@ -1,0 +1,65 @@
+
+<div id="csv-view">
+
+    <div id="view-top">
+        <div id="view-header">
+            <a href="/" id="homepage-link"> <i class="fa-solid fa-arrow-left"></i> &nbsp; Go to Homepage</a>
+            <h1><%= csv.filename %></h1>
+        </div>
+        
+        <!-- Search box -->
+        <div id="search-bar">
+            <input type="text" name="search" placeholder="Search...">
+        </div>
+    </div>
+
+
+    <table>
+        <!-- Headers -->
+        <% (header).forEach((key, i) => { %>
+            <th onclick="sortTable(<%=i%>)">
+                <%= key %>
+            </th>
+        <% }) %>
+
+        <!-- Rows -->
+       <% data.forEach((row, index) => { %>
+            
+            <tr>
+                <% Object.keys(row).forEach(key => { %>
+                    <td>
+                        <%= row[key] %>
+                    </td>
+                <% }) %>
+            </tr>
+
+       <% }) %>
+    </table>
+
+    <!-- Pagination  -->
+
+    <div id="pagination">
+
+        <% if(pageInfo.prev){ %>
+    
+            <a href="/display/<%= id %>?page=<%= pageInfo.prev %>" id="prev">
+                <p><%= pageInfo.prev %></p>
+            </a>
+    
+        <% } %>
+        
+        
+        <p id="current"><%= pageInfo.current %></p>
+        
+    
+        <% if(pageInfo.next) { %>
+         
+            <a href="/display/<%= id %>?page=<%= pageInfo.next %>" id="next">
+                <p><%= pageInfo.next %></p>
+            </a>
+    
+        <% } %>
+
+    </div>
+
+</div>
