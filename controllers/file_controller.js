@@ -93,7 +93,7 @@ module.exports.displayCSV = async function(req, res){
                 
                 data = data.slice(startIndex, endIndex);
 
-                return res.render('viewcsv', {
+                return res.render('viewcsv.ejs', {
                     title: `CSV Reader | ${csv.filename.substring(0, csv.filename.lastIndexOf('.'))}`,
                     id: id,
                     filename: csv.filename,
