@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 async function main(){
     try{
-        const db = await mongoose.connect('mongodb://127.0.0.1:27017/csv_upload');
+        const db = await mongoose.connect('mongodb+srv://pankaj3112:udPAnOOdZKwZxo5w@cluster0.lm6iyo2.mongodb.net/?retryWrites=true&w=majority');
         module.exports = db;
         console.log('**** MongoDB Connected ****')
     }
@@ -12,3 +12,5 @@ async function main(){
 }
 
 main();
+
+
