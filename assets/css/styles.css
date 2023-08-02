@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
 }
 
 html, body{
@@ -13,6 +12,7 @@ html, body{
 }
 
 #home{
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,6 +50,7 @@ header{
     background-color: rgb(253, 84, 84);
     border: 1px solid black;
     border-radius: 5px;
+    color: white;
 }
 
 #upload-form form input[type="submit"]:hover{
@@ -99,6 +100,7 @@ header{
 /* --------------------------- */
 
 #csv-view{
+    color: white;
     padding: 20px 30px;
 }
 
@@ -113,9 +115,6 @@ header{
     width: 40%;
 }
 
-#homepage-link{
-    /* color: blue; */
-}
 
 #view-header h1{
     font-size: 2.5rem;
@@ -188,6 +187,10 @@ th{
 #next{
     position: absolute;
     right: 0%;
+}
+
+#next p , #prev p{
+    color: white;
 }
 
 #current{

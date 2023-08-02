@@ -3,20 +3,19 @@
   "version": "1.0.0",
   "description": "A simple web app that lets users upload csv files and see data",
   "main": "index.js",
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Pankaj Beniwal",
   "license": "ISC",
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "csv-parser": "^3.0.0",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
     "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
     "fs": "^0.0.1-security",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.1",

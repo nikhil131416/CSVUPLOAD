@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Schema for CSV file
 const csvSchema = new mongoose.Schema({
     filename: {
         type: String,
@@ -11,6 +12,8 @@ const csvSchema = new mongoose.Schema({
     }
 });
 
+// Model for CSV file
 const CSV = mongoose.model('CSV', csvSchema);
 
+// Exporting the model
 module.exports = CSV;

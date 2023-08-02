@@ -1,7 +1,8 @@
 const search = document.querySelector('#search-bar input');
 const tableRow = document.querySelectorAll('tbody tr');
 
-
+//this method takes a term and searches for it in the each table row 
+//and if it founds something in  the row it displays it else hides it
 const filterTable = (term) => {
     tableRow.forEach((row, index) => {
         if(index === 0) return;
@@ -16,6 +17,7 @@ const filterTable = (term) => {
     });
 };
 
+//handling keyup event listener on search bar
 search.addEventListener('keyup', () => {
     const term = search.value.trim().toLowerCase();
     filterTable(term);
@@ -23,11 +25,8 @@ search.addEventListener('keyup', () => {
 
 
 
-
-
-
-//sorting
-
+//function to sort the table
+//this will be called when clicked on header items
 function sortTable(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     table = document.querySelector("table");
