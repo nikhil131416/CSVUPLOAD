@@ -206,7 +206,7 @@ th{
     padding: 10px 12px;
 }
 
-a{
+a, input{
     text-decoration: none;
     color: white;
 }

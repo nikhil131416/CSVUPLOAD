@@ -42,7 +42,7 @@ app.use(function(req, res, next){
         'success': req.flash('success'),
         'error': req.flash('error')
     }
-    console.log(res.locals.flash);
+    // console.log(res.locals.flash);
     next();
 });
 
