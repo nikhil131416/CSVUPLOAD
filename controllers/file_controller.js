@@ -16,7 +16,7 @@ module.exports.uploadCSV = function(req, res){
         file.mv(uploadpath, async function(err){
             if(err){
                 req.flash("error" ,'Error in Uploading file');
-                // console.log("File Upload Failed---->", filename, err);
+                console.log("File Upload Failed---->", filename, err);
                 return res.redirect('back');
             }
             else {
@@ -28,12 +28,12 @@ module.exports.uploadCSV = function(req, res){
 
                 if(!csv){
                     req.flash("error" ,'Error in Uploading file');
-                    // console.log("Error in creating csv file");
+                    console.log("Error in creating csv file");
                     return res.redirect('back');
                 }
                 else {
                     req.flash("success" ,'File Uploaded Successfully');
-                    // console.log("File Uploaded Succesfully--->", filename);
+                    console.log("File Uploaded Succesfully--->", filename);
                     res.redirect('back');
                 }
             }
@@ -59,14 +59,14 @@ module.exports.deleteCSV = async function(req, res){
             csv.deleteOne();
             fs.unlinkSync(csv.filepath);
 
-            // console.log("File Deleted Successfully--->", csv.filename);
+            console.log("File Deleted Successfully--->", csv.filename);
             req.flash("success" ,'File Deleted Successfully');
             return res.redirect('back');
         }
     }
     catch(err){
         req.flash("error" ,'Error in deleting file');
-        // console.log("Error in deleting csv file---->", err);
+        console.log("Error in deleting csv file---->", err);
         return res.redirect('back');
     }
 }
@@ -131,7 +131,7 @@ module.exports.displayCSV = async function(req, res){
         }
     }
     catch(err){
-        // console.log("Error in displaying csv file---->", err);
+        console.log("Error in displaying csv file---->", err);
         req.flash("error" ,'Error in displaying file');
         return res.redirect('back');
     }
