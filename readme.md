@@ -6,7 +6,7 @@ To install CSV_Upload, please follow these steps:
 
 Clone this repository using the following command:
 ```
-$ git clone https://github.com/Pankaj3112/CSVupload
+$ git clone https://github.com/Pankaj3112/CSVupload.git
 ```
 Install the required dependencies using the following command:
 ```
